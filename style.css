@@ -1,0 +1,148 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  --panel-bg: #171a24;
+  --surface: #0d0f17;
+  --text: #e7ecff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2140, var(--surface));
+  color: var(--text);
+}
+
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.panel {
+  background: color-mix(in oklab, var(--panel-bg), black 15%);
+  border: 1px solid #2a3042;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.file-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.file-input input {
+  color: inherit;
+}
+
+.setting {
+  display: grid;
+  grid-template-columns: 140px 1fr 46px;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+button {
+  width: fit-content;
+  border: 1px solid #32407a;
+  background: #273569;
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 1.2rem;
+  color: #a7b8ff;
+  font-size: 0.95rem;
+}
+
+.previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.previews > div {
+  display: grid;
+  gap: 0.5rem;
+}
+
+#sourcePreview {
+  width: 100%;
+  min-height: 260px;
+  max-height: 360px;
+  object-fit: contain;
+  border: 1px solid #313a56;
+  border-radius: 8px;
+  background: #080b14;
+}
+
+.css-stage {
+  min-height: 260px;
+  border: 1px solid #313a56;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  background: #080b14;
+  padding: 1rem;
+}
+
+#cssPixelArt {
+  width: var(--pixel-size, 10px);
+  height: var(--pixel-size, 10px);
+}
+
+.output {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cssCode {
+  min-height: 240px;
+  border-radius: 8px;
+  border: 1px solid #313a56;
+  background: #0b1020;
+  color: #d0ddff;
+  padding: 0.75rem;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  resize: vertical;
+}
