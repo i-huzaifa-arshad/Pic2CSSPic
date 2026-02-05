@@ -1,0 +1,40 @@
+{
+  "name": "pic2csspic",
+  "version": "1.0.0",
+  "description": "Convert an uploaded image into blocky CSS pixel art as a standalone Windows app.",
+  "main": "main.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win portable nsis"
+  },
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.pic2csspic.app",
+    "productName": "Pic2CSSPic",
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

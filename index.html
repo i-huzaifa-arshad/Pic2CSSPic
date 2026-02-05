@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pic2CSSPic</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Pic2CSSPic Desktop</h1>
+        <p>
+          Upload a photo and convert it into blocky pixel-art rendered only with CSS. Then export the
+          generated CSS for websites or design demos.
+        </p>
+      </header>
+
+      <section class="panel controls">
+        <label class="file-input">
+          <span>Choose image</span>
+          <input id="imageInput" type="file" accept="image/*" />
+        </label>
+
+        <div class="setting">
+          <label for="gridSize">Pixel grid</label>
+          <input id="gridSize" type="range" min="16" max="80" value="42" />
+          <output id="gridSizeValue">42</output>
+        </div>
+
+        <div class="setting">
+          <label for="pixelSize">CSS pixel size (px)</label>
+          <input id="pixelSize" type="range" min="4" max="20" value="10" />
+          <output id="pixelSizeValue">10</output>
+        </div>
+
+        <button id="convertBtn" disabled>Generate CSS Art</button>
+        <p id="statusText" class="status" role="status"></p>
+      </section>
+
+      <section class="panel previews">
+        <div>
+          <h2>Original</h2>
+          <img id="sourcePreview" alt="Uploaded source preview" />
+        </div>
+        <div>
+          <h2>CSS result</h2>
+          <div class="css-stage" id="cssStage">
+            <div id="cssPixelArt" aria-label="Generated CSS pixel art"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel output">
+        <div class="output-header">
+          <h2>Generated CSS</h2>
+          <button id="copyBtn" disabled>Copy CSS</button>
+        </div>
+        <textarea id="cssCode" readonly placeholder="Your CSS will appear here..."></textarea>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
